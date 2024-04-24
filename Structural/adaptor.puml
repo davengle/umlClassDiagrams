@@ -1,0 +1,16 @@
+@startuml
+class Target {
+    +request(): void
+}
+
+class Adaptee {
+    +specificRequest(): void
+}
+
+class Adapter extends Target {
+    -adaptee: Adaptee
+    +request(): void
+}
+
+Adapter --> Adaptee : adapts
+@enduml

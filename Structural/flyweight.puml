@@ -1,0 +1,17 @@
+@startuml
+class FlyweightFactory {
+    -flyweights: Map<String, Flyweight>
+    +getFlyweight(key: String): Flyweight
+}
+
+interface Flyweight {
+    +operation(extrinsicState: String): void
+}
+
+class ConcreteFlyweight implements Flyweight {
+    -intrinsicState: String
+    +operation(extrinsicState: String): void
+}
+
+FlyweightFactory --> Flyweight : creates
+@enduml

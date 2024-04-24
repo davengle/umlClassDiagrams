@@ -1,0 +1,26 @@
+@startuml
+abstract class Abstraction {
+    -implementor: Implementor
+    +operation(): void
+}
+
+class RefinedAbstraction extends Abstraction {
+    +operation(): void
+}
+
+interface Implementor {
+    +operationImpl(): void
+}
+
+class ConcreteImplementorA implements Implementor {
+    +operationImpl(): void
+}
+
+class ConcreteImplementorB implements Implementor {
+    +operationImpl(): void
+}
+
+Abstraction --> Implementor : uses
+RefinedAbstraction --> ConcreteImplementorA : uses
+RefinedAbstraction --> ConcreteImplementorB : uses
+@enduml
