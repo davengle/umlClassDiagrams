@@ -1,4 +1,4 @@
-@startuml
+"@startuml AbstractFactory"
     abstract class AbstractFactory {
         +createProductA(): AbstractProductA
         +createProductB(): AbstractProductB
