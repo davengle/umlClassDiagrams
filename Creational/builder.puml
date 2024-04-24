@@ -1,0 +1,26 @@
+@startuml
+class Director {
+    +construct(): void
+    +setBuilder(builder: Builder): void
+}
+
+abstract class Builder {
+    +buildPartA(): void
+    +buildPartB(): void
+    +getResult(): Product
+}
+
+class ConcreteBuilder extends Builder {
+    +buildPartA(): void
+    +buildPartB(): void
+    +getResult(): Product
+}
+
+class Product {
+    +listParts(): void
+}
+
+Director --> Builder : uses
+Builder --> Product : builds
+ConcreteBuilder --> Product : builds
+@enduml

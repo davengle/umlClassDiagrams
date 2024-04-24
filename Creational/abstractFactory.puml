@@ -1,0 +1,35 @@
+@startuml
+abstract class AbstractFactory {
+    +createProductA(): AbstractProductA
+    +createProductB(): AbstractProductB
+}
+
+class ConcreteFactory1 extends AbstractFactory {
+    +createProductA(): ProductA1
+    +createProductB(): ProductB1
+}
+
+class ConcreteFactory2 extends AbstractFactory {
+    +createProductA(): ProductA2
+    +createProductB(): ProductB2
+}
+
+abstract class AbstractProductA {
+}
+
+abstract class AbstractProductB {
+}
+
+class ProductA1 extends AbstractProductA {
+}
+
+class ProductB1 extends AbstractProductB {
+}
+
+class ProductA2 extends AbstractProductA {
+}
+
+class ProductB2 extends AbstractProductB {
+}
+
+@enduml
