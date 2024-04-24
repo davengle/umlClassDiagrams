@@ -1,0 +1,29 @@
+@startuml
+interface Mediator {
+    +notify(sender: Colleague, event: string): void
+}
+
+class ConcreteMediator implements Mediator {
+    -colleague1: ConcreteColleague1
+    -colleague2: ConcreteColleague2
+    +notify(sender: Colleague, event: string): void
+}
+
+abstract class Colleague {
+    -mediator: Mediator
+    +setMediator(mediator: Mediator): void
+}
+
+class ConcreteColleague1 extends Colleague {
+    +doSomething(): void
+}
+
+class ConcreteColleague2 extends Colleague {
+    +doSomethingElse(): void
+}
+
+ConcreteMediator --> ConcreteColleague1 : knows
+ConcreteMediator --> ConcreteColleague2 : knows
+ConcreteColleague1 --> ConcreteMediator : interacts
+ConcreteColleague2 --> ConcreteMediator : interacts
+@enduml

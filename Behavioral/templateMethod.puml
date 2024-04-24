@@ -1,0 +1,12 @@
+@startuml
+abstract class AbstractClass {
+    +templateMethod(): void
+    +primitiveOperation1(): void
+    +primitiveOperation2(): void
+}
+
+class ConcreteClass extends AbstractClass {
+    +primitiveOperation1(): void
+    +primitiveOperation2(): void
+}
+@enduml

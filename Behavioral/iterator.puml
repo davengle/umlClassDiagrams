@@ -1,0 +1,23 @@
+@startuml
+interface Iterator {
+    +hasNext(): boolean
+    +next(): Object
+}
+
+interface Aggregate {
+    +createIterator(): Iterator
+}
+
+class ConcreteAggregate implements Aggregate {
+    +createIterator(): Iterator
+}
+
+class ConcreteIterator implements Iterator {
+    -aggregate: ConcreteAggregate
+    -current: int
+    +hasNext(): boolean
+    +next(): Object
+}
+
+ConcreteAggregate --> ConcreteIterator : creates
+@enduml

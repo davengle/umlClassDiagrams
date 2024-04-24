@@ -1,0 +1,36 @@
+@startuml
+interface Visitor {
+    +visitConcreteElementA(element: ConcreteElementA): void
+    +visitConcreteElementB(element: ConcreteElementB): void
+}
+
+class ConcreteVisitor1 implements Visitor {
+    +visitConcreteElementA(element: ConcreteElementA): void
+    +visitConcreteElementB(element: ConcreteElementB): void
+}
+
+class ConcreteVisitor2 implements Visitor {
+    +visitConcreteElementA(element: ConcreteElementA): void
+    +visitConcreteElementB(element: ConcreteElementB): void
+}
+
+interface Element {
+    +accept(visitor: Visitor): void
+}
+
+class ConcreteElementA implements Element {
+    +accept(visitor: Visitor): void
+    +operationA(): void
+}
+
+class ConcreteElementB implements Element {
+    +accept(visitor: Visitor): void
+    +operationB(): void
+}
+
+Element --> Visitor : accepts
+ConcreteElementA --> ConcreteVisitor1 : accepts
+ConcreteElementA --> ConcreteVisitor2 : accepts
+ConcreteElementB --> ConcreteVisitor1 : accepts
+ConcreteElementB --> ConcreteVisitor2 : accepts
+@enduml

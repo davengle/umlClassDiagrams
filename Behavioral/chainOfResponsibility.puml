@@ -1,0 +1,17 @@
+@startuml
+abstract class Handler {
+    -successor: Handler
+    +setSuccessor(successor: Handler): void
+    +handleRequest(request: int): void
+}
+
+class ConcreteHandler1 extends Handler {
+    +handleRequest(request: int): void
+}
+
+class ConcreteHandler2 extends Handler {
+    +handleRequest(request: int): void
+}
+
+Handler --> Handler : next
+@enduml
