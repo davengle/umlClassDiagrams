@@ -46,6 +46,11 @@
 
     Client --* AbstractFactory
 
+    ConcreateFactory1 ..> ProductA1
+    ConcreateFactory1 ..> ProductA2
+    ConcreteFactory2 ..> ProductB1
+    ConcreteFactory2 ..> ProductB2
+
 
 @enduml
 
