@@ -1,4 +1,4 @@
-@startuml
+@startuml Builder
 class Director {
     +construct(): void
     +setBuilder(builder: Builder): void
